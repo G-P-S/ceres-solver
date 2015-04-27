@@ -144,7 +144,7 @@ LinearSolver::Summary IterativeSchurComplementSolver::SolveImpl(
       }
       break;
     default:
-      LOG(FATAL) << "Unknown Preconditioner Type";
+      LOG(MINIGLOG_FATAL) << "Unknown Preconditioner Type";
   }
 
   bool preconditioner_update_was_successful = true;

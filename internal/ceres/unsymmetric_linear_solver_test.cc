@@ -82,7 +82,7 @@ class UnsymmetricLinearSolverTest : public ::testing::Test {
       }
       transformed_A.reset(crsm);
     } else {
-      LOG(FATAL) << "Unknown linear solver : " << options.type;
+      LOG(MINIGLOG_FATAL) << "Unknown linear solver : " << options.type;
     }
 
     // Unregularized

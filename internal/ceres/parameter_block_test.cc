@@ -95,7 +95,7 @@ struct TestParameterization : public LocalParameterization {
   virtual bool Plus(const double* x,
                     const double* delta,
                     double* x_plus_delta) const {
-    LOG(FATAL) << "Shouldn't get called.";
+    LOG(MINIGLOG_FATAL) << "Shouldn't get called.";
     return true;
   }
   virtual bool ComputeJacobian(const double* x,

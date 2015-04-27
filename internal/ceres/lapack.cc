@@ -72,7 +72,7 @@ LinearSolverTerminationType LAPACK::SolveInPlaceUsingCholesky(
     double* rhs_and_solution,
     string* message) {
 #ifdef CERES_NO_LAPACK
-  LOG(FATAL) << "Ceres was built without a BLAS library.";
+  LOG(MINIGLOG_FATAL) << "Ceres was built without a BLAS library.";
   return LINEAR_SOLVER_FATAL_ERROR;
 #else
   char uplo = 'L';
@@ -83,7 +83,7 @@ LinearSolverTerminationType LAPACK::SolveInPlaceUsingCholesky(
 
   dpotrf_(&uplo, &n, lhs, &n, &info);
   if (info < 0) {
-    LOG(FATAL) << "Congratulations, you found a bug in Ceres."
+    LOG(MINIGLOG_FATAL) << "Congratulations, you found a bug in Ceres."
                << "Please report it."
                << "LAPACK::dpotrf fatal error."
                << "Argument: " << -info << " is invalid.";
@@ -100,7 +100,7 @@ LinearSolverTerminationType LAPACK::SolveInPlaceUsingCholesky(
 
   dpotrs_(&uplo, &n, &nrhs, lhs, &n, rhs_and_solution, &n, &info);
   if (info < 0) {
-    LOG(FATAL) << "Congratulations, you found a bug in Ceres."
+    LOG(MINIGLOG_FATAL) << "Congratulations, you found a bug in Ceres."
                << "Please report it."
                << "LAPACK::dpotrs fatal error."
                << "Argument: " << -info << " is invalid.";
@@ -114,7 +114,7 @@ LinearSolverTerminationType LAPACK::SolveInPlaceUsingCholesky(
 
 int LAPACK::EstimateWorkSizeForQR(int num_rows, int num_cols) {
 #ifdef CERES_NO_LAPACK
-  LOG(FATAL) << "Ceres was built without a LAPACK library.";
+  LOG(MINIGLOG_FATAL) << "Ceres was built without a LAPACK library.";
   return -1;
 #else
   char trans = 'N';
@@ -135,7 +135,7 @@ int LAPACK::EstimateWorkSizeForQR(int num_rows, int num_cols) {
          &info);
 
   if (info < 0) {
-    LOG(FATAL) << "Congratulations, you found a bug in Ceres."
+    LOG(MINIGLOG_FATAL) << "Congratulations, you found a bug in Ceres."
                << "Please report it."
                << "LAPACK::dgels fatal error."
                << "Argument: " << -info << " is invalid.";
@@ -153,7 +153,7 @@ LinearSolverTerminationType LAPACK::SolveInPlaceUsingQR(
     double* rhs_and_solution,
     string* message) {
 #ifdef CERES_NO_LAPACK
-  LOG(FATAL) << "Ceres was built without a LAPACK library.";
+  LOG(MINIGLOG_FATAL) << "Ceres was built without a LAPACK library.";
   return LINEAR_SOLVER_FATAL_ERROR;
 #else
   char trans = 'N';
@@ -178,7 +178,7 @@ LinearSolverTerminationType LAPACK::SolveInPlaceUsingQR(
          &info);
 
   if (info < 0) {
-    LOG(FATAL) << "Congratulations, you found a bug in Ceres."
+    LOG(MINIGLOG_FATAL) << "Congratulations, you found a bug in Ceres."
                << "Please report it."
                << "LAPACK::dgels fatal error."
                << "Argument: " << -info << " is invalid.";

@@ -700,15 +700,15 @@ template <int M, int N>
 void ExpectJetArraysClose(const Jet<double, N> *x, const Jet<double, N> *y) {
   for (int i = 0; i < M; i++) {
     if (!IsClose(x[i], y[i])) {
-      LOG(ERROR) << "Jet " << i << "/" << M << " not equal";
-      LOG(ERROR) << "x[" << i << "]: " << x[i];
-      LOG(ERROR) << "y[" << i << "]: " << y[i];
+      LOG(MINIGLOG_ERROR) << "Jet " << i << "/" << M << " not equal";
+      LOG(MINIGLOG_ERROR) << "x[" << i << "]: " << x[i];
+      LOG(MINIGLOG_ERROR) << "y[" << i << "]: " << y[i];
       Jet<double, N> d, zero;
       d.a = y[i].a - x[i].a;
       for (int j = 0; j < N; j++) {
         d.v[j] = y[i].v[j] - x[i].v[j];
       }
-      LOG(ERROR) << "diff: " << d;
+      LOG(MINIGLOG_ERROR) << "diff: " << d;
       EXPECT_TRUE(IsClose(x[i], y[i]));
     }
   }

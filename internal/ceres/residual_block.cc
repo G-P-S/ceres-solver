@@ -127,7 +127,7 @@ bool ResidualBlock::Evaluate(const bool apply_loss_function,
                            cost,
                            residuals,
                            eval_jacobians);
-    LOG(WARNING) << message;
+    LOG(MINIGLOG_WARNING) << message;
     return false;
   }
 

@@ -336,7 +336,7 @@ bool IsSparseLinearAlgebraLibraryTypeAvailable(
 #endif
   }
 
-  LOG(WARNING) << "Unknown sparse linear algebra library " << type;
+  LOG(MINIGLOG_WARNING) << "Unknown sparse linear algebra library " << type;
   return false;
 }
 
@@ -353,7 +353,7 @@ bool IsDenseLinearAlgebraLibraryTypeAvailable(
 #endif
   }
 
-  LOG(WARNING) << "Unknown dense linear algebra library " << type;
+  LOG(MINIGLOG_WARNING) << "Unknown dense linear algebra library " << type;
   return false;
 }
 

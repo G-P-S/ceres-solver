@@ -144,7 +144,7 @@ bool Program::IsValid() const {
   for (int i = 0; i < residual_blocks_.size(); ++i) {
     const ResidualBlock* residual_block = residual_blocks_[i];
     if (residual_block->index() != i) {
-      LOG(WARNING) << "Residual block: " << i
+      LOG(MINIGLOG_WARNING) << "Residual block: " << i
                    << " has incorrect index: " << residual_block->index();
       return false;
     }
@@ -157,7 +157,7 @@ bool Program::IsValid() const {
     if (parameter_block->index() != i ||
         parameter_block->state_offset() != state_offset ||
         parameter_block->delta_offset() != delta_offset) {
-      LOG(WARNING) << "Parameter block: " << i
+      LOG(MINIGLOG_WARNING) << "Parameter block: " << i
                    << "has incorrect indexing information: "
                    << parameter_block->ToString();
       return false;

@@ -52,7 +52,9 @@ LinearSolver* LinearSolver::Create(const LinearSolver::Options& options) {
 
     case SPARSE_NORMAL_CHOLESKY:
 #if defined(CERES_NO_SUITESPARSE) && defined(CERES_NO_CXSPARSE)
-      LOG(WARNING) << "SPARSE_NORMAL_CHOLESKY is not available. Please "
+
+      LOG(MINIGLOG_WARNING) << "SPARSE_NORMAL_CHOLESKY is not available. Please "
+
                    << "build Ceres with SuiteSparse or CXSparse. "
                    << "Returning NULL.";
       return NULL;
@@ -62,7 +64,9 @@ LinearSolver* LinearSolver::Create(const LinearSolver::Options& options) {
 
     case SPARSE_SCHUR:
 #if defined(CERES_NO_SUITESPARSE) && defined(CERES_NO_CXSPARSE)
-      LOG(WARNING) << "SPARSE_SCHUR is not available. Please "
+
+      LOG(MINIGLOG_WARNING) << "SPARSE_SCHUR is not available. Please "
+
                    << "build Ceres with SuiteSparse or CXSparse. "
                    << "Returning NULL.";
       return NULL;
@@ -83,9 +87,9 @@ LinearSolver* LinearSolver::Create(const LinearSolver::Options& options) {
       return new DenseNormalCholeskySolver(options);
 
     default:
-      LOG(FATAL) << "Unknown linear solver type :"
+      LOG(MINIGLOG_FATAL) << "Unknown linear solver type :"
                  << options.type;
-      return NULL;  // MSVC doesn't understand that LOG(FATAL) never returns.
+      return NULL;  // MSVC doesn't understand that LOG(MINIGLOG_FATAL) never returns.
   }
 }
 

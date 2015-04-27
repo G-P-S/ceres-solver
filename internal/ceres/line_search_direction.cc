@@ -76,14 +76,14 @@ class NonlinearConjugateGradient : public LineSearchDirection {
                  previous.search_direction.dot(gradient_change));
         break;
       default:
-        LOG(FATAL) << "Unknown nonlinear conjugate gradient type: " << type_;
+        LOG(MINIGLOG_FATAL) << "Unknown nonlinear conjugate gradient type: " << type_;
     }
 
     *search_direction =  -current.gradient + beta * previous.search_direction;
     const double directional_derivative =
         current.gradient.dot(*search_direction);
     if (directional_derivative > -function_tolerance_) {
-      LOG(WARNING) << "Restarting non-linear conjugate gradients: "
+      LOG(MINIGLOG_WARNING) << "Restarting non-linear conjugate gradients: "
                    << directional_derivative;
       *search_direction = -current.gradient;
     };
@@ -126,7 +126,7 @@ class LBFGS : public LineSearchDirection {
     *search_direction *= -1.0;
 
     if (search_direction->dot(current.gradient) >= 0.0) {
-      LOG(WARNING) << "Numerical failure in L-BFGS update: inverse Hessian "
+      LOG(MINIGLOG_WARNING) << "Numerical failure in L-BFGS update: inverse Hessian "
                    << "approximation is not positive definite, and thus "
                    << "initial gradient for search direction is positive: "
                    << search_direction->dot(current.gradient);
@@ -150,7 +150,7 @@ class BFGS : public LineSearchDirection {
         use_approximate_eigenvalue_scaling_(use_approximate_eigenvalue_scaling),
         initialized_(false),
         is_positive_definite_(true) {
-    LOG_IF(WARNING, num_parameters_ >= 1e3)
+    LOG_IF(MINIGLOG_WARNING, num_parameters_ >= 1e3)
         << "BFGS line search being created with: " << num_parameters_
         << " parameters, this will allocate a dense approximate inverse Hessian"
         << " of size: " << num_parameters_ << " x " << num_parameters_
@@ -320,7 +320,7 @@ class BFGS : public LineSearchDirection {
         (-1.0 * current.gradient);
 
     if (search_direction->dot(current.gradient) >= 0.0) {
-      LOG(WARNING) << "Numerical failure in BFGS update: inverse Hessian "
+      LOG(MINIGLOG_WARNING) << "Numerical failure in BFGS update: inverse Hessian "
                    << "approximation is not positive definite, and thus "
                    << "initial gradient for search direction is positive: "
                    << search_direction->dot(current.gradient);
@@ -364,7 +364,7 @@ LineSearchDirection::Create(const LineSearchDirection::Options& options) {
         options.use_approximate_eigenvalue_bfgs_scaling);
   }
 
-  LOG(ERROR) << "Unknown line search direction type: " << options.type;
+  LOG(MINIGLOG_ERROR) << "Unknown line search direction type: " << options.type;
   return NULL;
 }
 

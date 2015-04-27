@@ -184,7 +184,7 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
       summary->message =
           "Unable to project initial point onto the feasible set.";
       summary->termination_type = FAILURE;
-      LOG_IF(WARNING, is_not_silent) << "Terminating: " << summary->message;
+      LOG_IF(MINIGLOG_WARNING, is_not_silent) << "Terminating: " << summary->message;
       return;
     }
     x_min = x_plus_delta;
@@ -202,7 +202,7 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
                            jacobian)) {
     summary->message = "Residual and Jacobian evaluation failed.";
     summary->termination_type = FAILURE;
-    LOG_IF(WARNING, is_not_silent) << "Terminating: " << summary->message;
+    LOG_IF(MINIGLOG_WARNING, is_not_silent) << "Terminating: " << summary->message;
     return;
   }
 
@@ -212,7 +212,7 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
                        projected_gradient_step.data())) {
     summary->message = "Unable to compute gradient step.";
     summary->termination_type = FAILURE;
-    LOG(ERROR) << "Terminating: " << summary->message;
+    LOG(MINIGLOG_ERROR) << "Terminating: " << summary->message;
     return;
   }
 
@@ -306,7 +306,7 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
           "Linear solver failed due to unrecoverable "
           "non-numeric causes. Please see the error log for clues. ";
       summary->termination_type = FAILURE;
-      LOG_IF(WARNING, is_not_silent) << "Terminating: " << summary->message;
+      LOG_IF(MINIGLOG_WARNING, is_not_silent) << "Terminating: " << summary->message;
       return;
     }
 
@@ -354,7 +354,7 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
             "than Solver::Options::max_num_consecutive_invalid_steps: %d",
             options_.max_num_consecutive_invalid_steps);
         summary->termination_type = FAILURE;
-        LOG_IF(WARNING, is_not_silent) << "Terminating: " << summary->message;
+        LOG_IF(MINIGLOG_WARNING, is_not_silent) << "Terminating: " << summary->message;
         return;
       }
 
@@ -399,12 +399,16 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
                                 NULL,
                                 NULL,
                                 NULL)) {
-          LOG(WARNING) << "Step failed to evaluate. "
+
+          LOG(MINIGLOG_WARNING) << "Step failed to evaluate. "
+
                        << "Treating it as a step with infinite cost";
           new_cost = numeric_limits<double>::max();
         }
       } else {
-        LOG(WARNING) << "x_plus_delta = Plus(x, delta) failed. "
+
+        LOG(MINIGLOG_WARNING) << "x_plus_delta = Plus(x, delta) failed. "
+
                      << "Treating it as a step with infinite cost";
       }
 
@@ -579,7 +583,7 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
                                jacobian)) {
         summary->message = "Residual and Jacobian evaluation failed.";
         summary->termination_type = FAILURE;
-        LOG_IF(WARNING, is_not_silent) << "Terminating: " << summary->message;
+        LOG_IF(MINIGLOG_WARNING, is_not_silent) << "Terminating: " << summary->message;
         return;
       }
 
@@ -590,7 +594,7 @@ void TrustRegionMinimizer::Minimize(const Minimizer::Options& options,
         summary->message =
             "projected_gradient_step = Plus(x, -gradient) failed.";
         summary->termination_type = FAILURE;
-        LOG(ERROR) << "Terminating: " << summary->message;
+        LOG(MINIGLOG_ERROR) << "Terminating: " << summary->message;
         return;
       }
 

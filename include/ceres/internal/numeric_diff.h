@@ -194,7 +194,7 @@ struct NumericDiff<CostFunctor, kMethod, kNumResiduals,
       const int num_residuals,
       double **parameters,
       double *jacobian) {
-    LOG(FATAL) << "Control should never reach here.";
+    LOG(MINIGLOG_FATAL) << "Control should never reach here.";
     return true;
   }
 };

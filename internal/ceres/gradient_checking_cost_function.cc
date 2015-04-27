@@ -134,7 +134,7 @@ class GradientCheckingCostFunction : public CostFunction {
     if (!function_->Evaluate(parameters,
                              residuals,
                              &term_jacobian_pointers[0])) {
-      LOG(WARNING) << "Function evaluation failed.";
+      LOG(MINIGLOG_WARNING) << "Function evaluation failed.";
       return false;
     }
 
@@ -211,7 +211,7 @@ class GradientCheckingCostFunction : public CostFunction {
       if (!extra_info_.empty()) {
         header += "Extra info for this residual: " + extra_info_ + "\n";
       }
-      LOG(WARNING) << "\n" << header << m;
+      LOG(MINIGLOG_WARNING) << "\n" << header << m;
     }
     return true;
   }

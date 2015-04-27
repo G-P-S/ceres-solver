@@ -182,7 +182,7 @@ void SetOrdering(BALProblem* bal_problem, Solver::Options* options) {
     } else if (FLAGS_blocks_for_inner_iterations == "automatic") {
       LOG(INFO) << "Choosing automatic blocks for inner iterations";
     } else {
-      LOG(FATAL) << "Unknown block type for inner iterations: "
+      LOG(MINIGLOG_FATAL) << "Unknown block type for inner iterations: "
                  << FLAGS_blocks_for_inner_iterations;
     }
   }
@@ -335,7 +335,7 @@ int main(int argc, char** argv) {
   google::ParseCommandLineFlags(&argc, &argv, true);
   google::InitGoogleLogging(argv[0]);
   if (FLAGS_input.empty()) {
-    LOG(ERROR) << "Usage: bundle_adjustment_example --input=bal_problem";
+    LOG(MINIGLOG_ERROR) << "Usage: bundle_adjustment_example --input=bal_problem";
     return 1;
   }
 

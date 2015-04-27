@@ -512,7 +512,7 @@ void SetMinimizerOptions(ceres::Solver::Options* options) {
 
 void SolveNISTProblems() {
   if (FLAGS_nist_data_dir.empty()) {
-    LOG(FATAL) << "Must specify the directory containing the NIST problems";
+    LOG(MINIGLOG_FATAL) << "Must specify the directory containing the NIST problems";
   }
 
   ceres::Solver::Options options;

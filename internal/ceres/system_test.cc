@@ -345,7 +345,11 @@ class BundleAdjustmentProblem {
     FILE * fptr = fopen(filename.c_str(), "r");
 
     if (!fptr) {
+<<<<<<< HEAD
       LOG(FATAL) << "File Error: unable to open file " << filename;
+=======
+      LOG(MINIGLOG_FATAL) << "File Error: unable to open file " << filename;
+>>>>>>> 860be0c... Replaced with version 1.9.0 used by Super Bank calibration.
     };
 
     // This will die horribly on invalid files. Them's the breaks.
@@ -418,7 +422,7 @@ class BundleAdjustmentProblem {
   void FscanfOrDie(FILE *fptr, const char *format, T *value) {
     int num_scanned = fscanf(fptr, format, value);
     if (num_scanned != 1) {
-      LOG(FATAL) << "Invalid UW data file.";
+      LOG(MINIGLOG_FATAL) << "Invalid UW data file.";
     }
   }
 

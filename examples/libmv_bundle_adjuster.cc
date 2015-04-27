@@ -288,7 +288,7 @@ class EndianAwareFileReader {
     } else if (file_endian_type_flag == 'v') {
       file_endian_type_ = kLittleEndian;
     } else {
-      LOG(FATAL) << "Problem file is stored in unknown endian type.";
+      LOG(MINIGLOG_FATAL) << "Problem file is stored in unknown endian type.";
     }
     return true;
   }
@@ -321,7 +321,7 @@ class EndianAwareFileReader {
     } else if (sizeof(T) == 1) {
       return value;
     } else {
-      LOG(FATAL) << "Entered non-implemented part of endian switching function.";
+      LOG(MINIGLOG_FATAL) << "Entered non-implemented part of endian switching function.";
     }
   }
 
@@ -381,7 +381,7 @@ bool ReadProblemFromFile(const std::string &file_name,
   } else if (is_image_space_flag == 'N') {
     *is_image_space = false;
   } else {
-    LOG(FATAL) << "Problem file contains markers stored in unknown space.";
+    LOG(MINIGLOG_FATAL) << "Problem file contains markers stored in unknown space.";
   }
 
   // Read camera intrinsics.
@@ -783,7 +783,7 @@ int main(int argc, char **argv) {
   google::InitGoogleLogging(argv[0]);
 
   if (FLAGS_input.empty()) {
-    LOG(ERROR) << "Usage: libmv_bundle_adjuster --input=blender_problem";
+    LOG(MINIGLOG_ERROR) << "Usage: libmv_bundle_adjuster --input=blender_problem";
     return EXIT_FAILURE;
   }
 
@@ -799,7 +799,7 @@ int main(int argc, char **argv) {
                            &all_points,
                            &is_image_space,
                            &all_markers)) {
-    LOG(ERROR) << "Error reading problem file";
+    LOG(MINIGLOG_ERROR) << "Error reading problem file";
     return EXIT_FAILURE;
   }
 
@@ -825,7 +825,7 @@ int main(int argc, char **argv) {
     if (FLAGS_refine_intrinsics == "radial") {
       bundle_intrinsics = BUNDLE_FOCAL_LENGTH | BUNDLE_RADIAL;
     } else if (FLAGS_refine_intrinsics != "none") {
-      LOG(ERROR) << "Unsupported value for refine-intrinsics";
+      LOG(MINIGLOG_ERROR) << "Unsupported value for refine-intrinsics";
       return EXIT_FAILURE;
     }
   }

@@ -46,11 +46,11 @@ TrustRegionStrategy* TrustRegionStrategy::Create(const Options& options) {
     case DOGLEG:
       return new DoglegStrategy(options);
     default:
-      LOG(FATAL) << "Unknown trust region strategy: "
+      LOG(MINIGLOG_FATAL) << "Unknown trust region strategy: "
                  << options.trust_region_strategy_type;
   }
 
-  LOG(FATAL) << "Unknown trust region strategy: "
+  LOG(MINIGLOG_FATAL) << "Unknown trust region strategy: "
              << options.trust_region_strategy_type;
   return NULL;
 }

@@ -112,7 +112,7 @@ LinearSolver::Summary SparseNormalCholeskySolver::SolveImpl(
       summary = SolveImplUsingCXSparse(A, per_solve_options, x);
       break;
     default:
-      LOG(FATAL) << "Unknown sparse linear algebra library : "
+      LOG(MINIGLOG_FATAL) << "Unknown sparse linear algebra library : "
                  << options_.sparse_linear_algebra_library_type;
   }
 
@@ -191,7 +191,9 @@ LinearSolver::Summary SparseNormalCholeskySolver::SolveImplUsingCXSparse(
     CompressedRowSparseMatrix* A,
     const LinearSolver::PerSolveOptions& per_solve_options,
     double * rhs_and_solution) {
-  LOG(FATAL) << "No CXSparse support in Ceres.";
+
+  LOG(MINIGLOG_FATAL) << "No CXSparse support in Ceres.";
+
 
   // Unreachable but MSVC does not know this.
   return LinearSolver::Summary();
@@ -262,7 +264,9 @@ LinearSolver::Summary SparseNormalCholeskySolver::SolveImplUsingSuiteSparse(
     CompressedRowSparseMatrix* A,
     const LinearSolver::PerSolveOptions& per_solve_options,
     double * rhs_and_solution) {
-  LOG(FATAL) << "No SuiteSparse support in Ceres.";
+
+  LOG(MINIGLOG_FATAL) << "No SuiteSparse support in Ceres.";
+
 
   // Unreachable but MSVC does not know this.
   return LinearSolver::Summary();

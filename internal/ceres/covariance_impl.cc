@@ -165,7 +165,7 @@ bool CovarianceImpl::GetCovarianceBlock(const double* original_parameter_block1,
   }
 
   if (offset == row_size) {
-    LOG(ERROR) << "Unable to find covariance block for "
+    LOG(MINIGLOG_ERROR) << "Unable to find covariance block for "
                << original_parameter_block1 << " "
                << original_parameter_block2;
     return false;
@@ -402,7 +402,7 @@ bool CovarianceImpl::ComputeCovarianceValues() {
       return ComputeCovarianceValuesUsingSparseQR();
 #endif
     default:
-      LOG(ERROR) << "Unsupported covariance estimation algorithm type: "
+      LOG(MINIGLOG_ERROR) << "Unsupported covariance estimation algorithm type: "
                  << CovarianceAlgorithmTypeToString(options_.algorithm_type);
       return false;
   }
@@ -445,7 +445,9 @@ bool CovarianceImpl::ComputeCovarianceValuesUsingSparseCholesky() {
   cholmod_factor* factor = ss.AnalyzeCholesky(&cholmod_jacobian_view, &message);
   event_logger.AddEvent("Symbolic Factorization");
   if (factor == NULL) {
-    LOG(ERROR) << "Covariance estimation failed. "
+
+    LOG(MINIGLOG_ERROR) << "Covariance estimation failed. "
+
                << "CHOLMOD symbolic cholesky factorization returned with: "
                << message;
     return false;
@@ -455,7 +457,9 @@ bool CovarianceImpl::ComputeCovarianceValuesUsingSparseCholesky() {
       ss.Cholesky(&cholmod_jacobian_view, factor, &message);
   event_logger.AddEvent("Numeric Factorization");
   if (termination_type != LINEAR_SOLVER_SUCCESS) {
-    LOG(ERROR) << "Covariance estimation failed. "
+
+    LOG(MINIGLOG_ERROR) << "Covariance estimation failed. "
+
                << "CHOLMOD numeric cholesky factorization returned with: "
                << message;
     ss.Free(factor);
@@ -467,7 +471,9 @@ bool CovarianceImpl::ComputeCovarianceValuesUsingSparseCholesky() {
 
   if (reciprocal_condition_number <
       options_.min_reciprocal_condition_number) {
-    LOG(ERROR) << "Cholesky factorization of J'J is not reliable. "
+
+    LOG(MINIGLOG_ERROR) << "Cholesky factorization of J'J is not reliable. "
+
                << "Reciprocal condition number: "
                << reciprocal_condition_number << " "
                << "min_reciprocal_condition_number: "
@@ -693,7 +699,7 @@ bool CovarianceImpl::ComputeCovarianceValuesUsingSparseQR() {
   CHECK_NOTNULL(R);
 
   if (rank < cholmod_jacobian.ncol) {
-    LOG(ERROR) << "Jacobian matrix is rank deficient. "
+    LOG(MINIGLOG_ERROR) << "Jacobian matrix is rank deficient. "
                << "Number of columns: " << cholmod_jacobian.ncol
                << " rank: " << rank;
     free(permutation);
@@ -819,7 +825,7 @@ bool CovarianceImpl::ComputeCovarianceValuesUsingDenseSVD() {
       if (automatic_truncation) {
         break;
       } else {
-        LOG(ERROR) << "Cholesky factorization of J'J is not reliable. "
+        LOG(MINIGLOG_ERROR) << "Cholesky factorization of J'J is not reliable. "
                    << "Reciprocal condition number: "
                    << singular_value_ratio * singular_value_ratio << " "
                    << "min_reciprocal_condition_number: "

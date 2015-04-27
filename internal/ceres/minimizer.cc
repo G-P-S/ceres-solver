@@ -61,7 +61,7 @@ bool Minimizer::RunCallbacks(const Minimizer::Options& options,
       VLOG_IF(1, is_not_silent) << "Terminating: " << summary->message;
       return false;
     default:
-      LOG(FATAL) << "Unknown type of user callback status";
+      LOG(MINIGLOG_FATAL) << "Unknown type of user callback status";
   }
   return false;
 }

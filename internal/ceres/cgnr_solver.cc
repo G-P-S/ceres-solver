@@ -46,7 +46,7 @@ CgnrSolver::CgnrSolver(const LinearSolver::Options& options)
     preconditioner_(NULL) {
   if (options_.preconditioner_type != JACOBI &&
       options_.preconditioner_type != IDENTITY) {
-    LOG(FATAL) << "CGNR only supports IDENTITY and JACOBI preconditioners.";
+    LOG(MINIGLOG_FATAL) << "CGNR only supports IDENTITY and JACOBI preconditioners.";
   }
 }
 

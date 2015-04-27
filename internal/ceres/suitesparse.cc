@@ -332,7 +332,7 @@ bool SuiteSparse::ConstrainedApproximateMinimumDegreeOrdering(
 #ifndef CERES_NO_CAMD
   return cholmod_camd(matrix, NULL, 0, constraints, ordering, &cc_);
 #else
-  LOG(FATAL) << "Congratulations you have found a bug in Ceres."
+  LOG(MINIGLOG_FATAL) << "Congratulations you have found a bug in Ceres."
              << "Ceres Solver was compiled with SuiteSparse "
              << "version 4.1.0 or less. Calling this function "
              << "in that case is a bug. Please contact the"

@@ -330,13 +330,13 @@ class ParameterBlock {
     if (!local_parameterization_->ComputeJacobian(
             state_,
             local_parameterization_jacobian_.get())) {
-      LOG(WARNING) << "Local parameterization Jacobian computation failed"
+      LOG(MINIGLOG_WARNING) << "Local parameterization Jacobian computation failed"
           "for x: " << ConstVectorRef(state_, Size()).transpose();
       return false;
     }
 
     if (!IsArrayValid(jacobian_size, local_parameterization_jacobian_.get())) {
-      LOG(WARNING) << "Local parameterization Jacobian computation returned"
+      LOG(MINIGLOG_WARNING) << "Local parameterization Jacobian computation returned"
                    << "an invalid matrix for x: "
                    << ConstVectorRef(state_, Size()).transpose()
                    << "\n Jacobian matrix : "

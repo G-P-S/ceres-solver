@@ -57,7 +57,7 @@ LinearLeastSquaresProblem* CreateLinearLeastSquaresProblemFromId(int id) {
     case 3:
       return LinearLeastSquaresProblem3();
     default:
-      LOG(FATAL) << "Unknown problem id requested " << id;
+      LOG(MINIGLOG_FATAL) << "Unknown problem id requested " << id;
   }
   return NULL;
 }
@@ -512,19 +512,19 @@ bool DumpLinearLeastSquaresProblemToConsole(const SparseMatrix* A,
   CHECK_NOTNULL(A);
   Matrix AA;
   A->ToDenseMatrix(&AA);
-  LOG(INFO) << "A^T: \n" << AA.transpose();
+  LOG(MINIGLOG_INFO) << "A^T: \n" << AA.transpose();
 
   if (D != NULL) {
-    LOG(INFO) << "A's appended diagonal:\n"
+    LOG(MINIGLOG_INFO) << "A's appended diagonal:\n"
               << ConstVectorRef(D, A->num_cols());
   }
 
   if (b != NULL) {
-    LOG(INFO) << "b: \n" << ConstVectorRef(b, A->num_rows());
+    LOG(MINIGLOG_INFO) << "b: \n" << ConstVectorRef(b, A->num_rows());
   }
 
   if (x != NULL) {
-    LOG(INFO) << "x: \n" << ConstVectorRef(x, A->num_cols());
+    LOG(MINIGLOG_INFO) << "x: \n" << ConstVectorRef(x, A->num_cols());
   }
   return true;
 };
@@ -549,7 +549,7 @@ bool DumpLinearLeastSquaresProblemToTextFile(const string& filename_base,
                                              const double* x,
                                              int num_eliminate_blocks) {
   CHECK_NOTNULL(A);
-  LOG(INFO) << "writing to: " << filename_base << "*";
+  LOG(MINIGLOG_INFO) << "writing to: " << filename_base << "*";
 
   string matlab_script;
   StringAppendF(&matlab_script,
@@ -618,7 +618,9 @@ bool DumpLinearLeastSquaresProblem(const string& filename_base,
                                                      A, D, b, x,
                                                      num_eliminate_blocks);
     default:
-      LOG(FATAL) << "Unknown DumpFormatType " << dump_format_type;
+
+      LOG(MINIGLOG_FATAL) << "Unknown DumpFormatType " << dump_format_type;
+
   };
 
   return true;

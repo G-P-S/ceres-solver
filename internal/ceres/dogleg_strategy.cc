@@ -319,7 +319,7 @@ void DoglegStrategy::ComputeSubspaceDoglegStep(double* dogleg) {
   if (!FindMinimumOnTrustRegionBoundary(&minimum)) {
     // For the positive semi-definite case, a traditional dogleg step
     // is taken in this case.
-    LOG(WARNING) << "Failed to compute polynomial roots. "
+    LOG(MINIGLOG_WARNING) << "Failed to compute polynomial roots. "
                  << "Taking traditional dogleg step instead.";
     ComputeTraditionalDoglegStep(dogleg);
     return;
@@ -345,7 +345,7 @@ void DoglegStrategy::ComputeSubspaceDoglegStep(double* dogleg) {
   const double cosine_angle = -minimum.dot(grad_minimum) /
       (minimum.norm() * grad_minimum.norm());
   if (cosine_angle < kCosineThreshold) {
-    LOG(WARNING) << "First order optimality seems to be violated "
+    LOG(MINIGLOG_WARNING) << "First order optimality seems to be violated "
                  << "in the subspace method!\n"
                  << "Cosine of angle between x and B x + g is "
                  << cosine_angle << ".\n"
@@ -577,7 +577,7 @@ LinearSolver::Summary DoglegStrategy::ComputeGaussNewtonStep(
                                          residuals,
                                          gauss_newton_step_.data(),
                                          0)) {
-        LOG(ERROR) << "Unable to dump trust region problem."
+        LOG(MINIGLOG_ERROR) << "Unable to dump trust region problem."
                    << " Filename base: "
                    << per_solve_options.dump_filename_base;
       }
@@ -654,7 +654,7 @@ bool DoglegStrategy::ComputeSubspaceModel(SparseMatrix* jacobian) {
       // This should never happen, as it implies that both the gradient
       // and the Gauss-Newton step are zero. In this case, the minimizer should
       // have stopped due to the gradient being too small.
-      LOG(ERROR) << "Rank of subspace basis is 0. "
+      LOG(MINIGLOG_ERROR) << "Rank of subspace basis is 0. "
                  << "This means that the gradient at the current iterate is "
                  << "zero but the optimization has not been terminated. "
                  << "You may have found a bug in Ceres.";
@@ -672,7 +672,7 @@ bool DoglegStrategy::ComputeSubspaceModel(SparseMatrix* jacobian) {
       break;
 
     default:
-      LOG(ERROR) << "Rank of the subspace basis matrix is reported to be "
+      LOG(MINIGLOG_ERROR) << "Rank of the subspace basis matrix is reported to be "
                  << "greater than 2. As the matrix contains only two "
                  << "columns this cannot be true and is indicative of "
                  << "a bug.";

@@ -205,7 +205,7 @@ double LineSearch::InterpolatingPolynomialMinimizingStepSize(
       samples.push_back(previous);
     }
   } else {
-    LOG(FATAL) << "Ceres bug: No handler for interpolation_type: "
+    LOG(MINIGLOG_FATAL) << "Ceres bug: No handler for interpolation_type: "
                << LineSearchInterpolationTypeToString(interpolation_type)
                << ", please contact the developers!";
   }
@@ -275,7 +275,7 @@ void ArmijoLineSearch::Search(const double step_size_estimate,
                        "satisfying the sufficient decrease condition within "
                        "specified max_num_iterations: %d.",
                        options().max_num_iterations);
-      LOG_IF(WARNING, !options().is_silent) << summary->error;
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
       return;
     }
 
@@ -293,7 +293,7 @@ void ArmijoLineSearch::Search(const double step_size_estimate,
           StringPrintf("Line search failed: step_size too small: %.5e "
                        "with descent_direction_max_norm: %.5e.", step_size,
                        descent_direction_max_norm);
-      LOG_IF(WARNING, !options().is_silent) << summary->error;
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
       return;
     }
 
@@ -546,7 +546,7 @@ bool WolfeLineSearch::BracketingPhase(
       // conditions, or a valid bracket containing such a point. Stop searching
       // and set bracket_low to the size size amongst all those tested which
       // minimizes f() and satisfies the Armijo condition.
-      LOG_IF(WARNING, !options().is_silent)
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent)
           << "Line search failed: Wolfe bracketing phase shrank "
           << "bracket width: " << fabs(current.x - previous.x)
           <<  ", to < tolerance: " << options().min_step_size
@@ -568,7 +568,7 @@ bool WolfeLineSearch::BracketingPhase(
                        "find a point satisfying strong Wolfe conditions, or a "
                        "bracket containing such a point within specified "
                        "max_num_iterations: %d", options().max_num_iterations);
-      LOG_IF(WARNING, !options().is_silent) << summary->error;
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
       // Ensure that bracket_low is always set to the step size amongst all
       // those tested which minimizes f() and satisfies the Armijo condition
       // when we terminate due to the 'artificial' max_num_iterations condition.
@@ -607,7 +607,7 @@ bool WolfeLineSearch::BracketingPhase(
           StringPrintf("Line search failed: step_size too small: %.5e "
                        "with descent_direction_max_norm: %.5e", step_size,
                        descent_direction_max_norm);
-      LOG_IF(WARNING, !options().is_silent) << summary->error;
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
       return false;
     }
 
@@ -691,7 +691,7 @@ bool WolfeLineSearch::ZoomPhase(const FunctionSample& initial_position,
                      initial_position.ToDebugString().c_str(),
                      bracket_low.ToDebugString().c_str(),
                      bracket_high.ToDebugString().c_str());
-    LOG_IF(WARNING, !options().is_silent) << summary->error;
+    LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
     solution->value_is_valid = false;
     return false;
   }
@@ -712,7 +712,7 @@ bool WolfeLineSearch::ZoomPhase(const FunctionSample& initial_position,
                        "within specified max_num_iterations: %d, "
                        "(num iterations taken for bracketing: %d).",
                        options().max_num_iterations, num_bracketing_iterations);
-      LOG_IF(WARNING, !options().is_silent) << summary->error;
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
       return false;
     }
     if (fabs(bracket_high.x - bracket_low.x) * descent_direction_max_norm
@@ -724,7 +724,7 @@ bool WolfeLineSearch::ZoomPhase(const FunctionSample& initial_position,
                        "too small with descent_direction_max_norm: %.5e.",
                        fabs(bracket_high.x - bracket_low.x),
                        descent_direction_max_norm);
-      LOG_IF(WARNING, !options().is_silent) << summary->error;
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
       return false;
     }
 
@@ -775,7 +775,7 @@ bool WolfeLineSearch::ZoomPhase(const FunctionSample& initial_position,
                        "between low_step: %.5e and high_step: %.5e "
                        "at which function is valid.",
                        solution->x, bracket_low.x, bracket_high.x);
-      LOG_IF(WARNING, !options().is_silent) << summary->error;
+      LOG_IF(MINIGLOG_WARNING, !options().is_silent) << summary->error;
       return false;
     }
 

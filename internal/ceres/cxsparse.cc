@@ -71,7 +71,7 @@ bool CXSparse::SolveCholesky(cs_di* A,
   // Solve using Cholesky factorization
   csn* numeric_factorization = cs_di_chol(A, symbolic_factorization);
   if (numeric_factorization == NULL) {
-    LOG(WARNING) << "Cholesky factorization failed.";
+    LOG(MINIGLOG_WARNING) << "Cholesky factorization failed.";
     return false;
   }
 

@@ -54,7 +54,7 @@ void BLAS::SymmetricRankKUpdate(int num_rows,
                                 double beta,
                                 double* c) {
 #ifdef CERES_NO_LAPACK
-  LOG(FATAL) << "Ceres was built without a BLAS library.";
+	LOG(MINIGLOG_FATAL) << "Ceres was built without a BLAS library.";
 #else
   char uplo = 'L';
   char trans = transpose ? 'T' : 'N';

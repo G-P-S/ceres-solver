@@ -264,7 +264,7 @@ ResidualBlock* ProblemImpl::AddResidualBlock(
         blocks += StringPrintf(" %p ", parameter_blocks[i]);
       }
 
-      LOG(FATAL) << "Duplicate parameter blocks in a residual parameter "
+      LOG(MINIGLOG_FATAL) << "Duplicate parameter blocks in a residual parameter "
                  << "are not allowed. Parameter block pointers: ["
                  << blocks << "]";
     }
@@ -605,7 +605,7 @@ bool ProblemImpl::Evaluate(const Problem::EvaluateOptions& evaluate_options,
       residuals == NULL &&
       gradient == NULL &&
       jacobian == NULL) {
-    LOG(INFO) << "Nothing to do.";
+    LOG(MINIGLOG_INFO) << "Nothing to do.";
     return true;
   }
 
@@ -690,7 +690,7 @@ bool ProblemImpl::Evaluate(const Problem::EvaluateOptions& evaluate_options,
   scoped_ptr<Evaluator> evaluator(
       Evaluator::Create(evaluator_options, &program, &error));
   if (evaluator.get() == NULL) {
-    LOG(ERROR) << "Unable to create an Evaluator object. "
+    LOG(MINIGLOG_ERROR) << "Unable to create an Evaluator object. "
                << "Error: " << error
                << "This is a Ceres bug; please contact the developers!";
 

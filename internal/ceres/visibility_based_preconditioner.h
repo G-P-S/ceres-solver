@@ -209,7 +209,7 @@ class VisibilityBasedPreconditioner : public BlockSparseMatrixPreconditioner {
  public:
   VisibilityBasedPreconditioner(const CompressedRowBlockStructure& bs,
                                 const Preconditioner::Options& options) {
-    LOG(FATAL) << "Visibility based preconditioning is not available. Please "
+    LOG(MINIGLOG_FATAL) << "Visibility based preconditioning is not available. Please "
         "build Ceres with SuiteSparse.";
   }
   virtual ~VisibilityBasedPreconditioner() {}

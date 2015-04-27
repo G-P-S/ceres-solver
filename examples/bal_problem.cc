@@ -49,7 +49,7 @@ template<typename T>
 void FscanfOrDie(FILE* fptr, const char* format, T* value) {
   int num_scanned = fscanf(fptr, format, value);
   if (num_scanned != 1) {
-    LOG(FATAL) << "Invalid UW data file.";
+    LOG(MINIGLOG_FATAL) << "Invalid UW data file.";
   }
 }
 
@@ -72,7 +72,7 @@ BALProblem::BALProblem(const std::string& filename, bool use_quaternions) {
   FILE* fptr = fopen(filename.c_str(), "r");
 
   if (fptr == NULL) {
-    LOG(FATAL) << "Error: unable to open file " << filename;
+    LOG(MINIGLOG_FATAL) << "Error: unable to open file " << filename;
     return;
   };
 
@@ -137,7 +137,7 @@ void BALProblem::WriteToFile(const std::string& filename) const {
   FILE* fptr = fopen(filename.c_str(), "w");
 
   if (fptr == NULL) {
-    LOG(FATAL) << "Error: unable to open file " << filename;
+    LOG(MINIGLOG_FATAL) << "Error: unable to open file " << filename;
     return;
   };
 

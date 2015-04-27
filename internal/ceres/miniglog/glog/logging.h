@@ -106,20 +106,20 @@
 #include <vector>
 
 // Log severity level constants.
-const int FATAL   = -3;
-const int ERROR   = -2;
-const int WARNING = -1;
-const int INFO    =  0;
+const int MINIGLOG_FATAL = -3;
+const int MINIGLOG_ERROR   = -2;
+const int MINIGLOG_WARNING = -1;
+const int MINIGLOG_INFO = 0;
 
 // ------------------------- Glog compatibility ------------------------------
 
 namespace google {
 
 typedef int LogSeverity;
-const int INFO    = ::INFO;
-const int WARNING = ::WARNING;
-const int ERROR   = ::ERROR;
-const int FATAL   = ::FATAL;
+const int MINIGLOG_INFO = ::MINIGLOG_INFO;
+const int MINIGLOG_WARNING = ::MINIGLOG_WARNING;
+const int MINIGLOG_ERROR = ::MINIGLOG_ERROR;
+const int MINIGLOG_FATAL = ::MINIGLOG_FATAL;
 
 // Sink class used for integration with mock and test functions. If sinks are
 // added, all log output is also sent to each sink through the send function.
@@ -212,7 +212,7 @@ class MessageLogger {
 
     // Android logging at level FATAL does not terminate execution, so abort()
     // is still required to stop the program.
-    if (severity_ == FATAL) {
+	if (severity_ == MINIGLOG_FATAL) {
       abort();
     }
   }
@@ -223,10 +223,10 @@ class MessageLogger {
  private:
   void LogToSinks(int severity) {
     time_t rawtime;
-    struct tm* timeinfo;
+    struct tm* timeinfo = new tm();
 
     time (&rawtime);
-    timeinfo = localtime(&rawtime);
+    localtime_s(timeinfo, &rawtime);
     std::set<google::LogSink*>::iterator iter;
     // Send the log message to all sinks.
     for (iter = google::log_sinks_global.begin();
@@ -320,23 +320,23 @@ class LoggerVoidify {
 // Log a message and terminate.
 template<class T>
 void LogMessageFatal(const char *file, int line, const T &message) {
-  MessageLogger((char *)__FILE__, __LINE__, "native", FATAL).stream()
+	MessageLogger((char *)__FILE__, __LINE__, "native", MINIGLOG_FATAL).stream()
       << message;
 }
 
 // ---------------------------- CHECK macros ---------------------------------
 
 // Check for a given boolean condition.
-#define CHECK(condition) LOG_IF_FALSE(FATAL, condition) \
+#define CHECK(condition) LOG_IF_FALSE(MINIGLOG_FATAL, condition) \
         << "Check failed: " #condition " "
 
 #ifndef NDEBUG
 // Debug only version of CHECK
-#  define DCHECK(condition) LOG_IF_FALSE(FATAL, condition) \
+#  define DCHECK(condition) LOG_IF_FALSE(MINIGLOG_FATAL, condition) \
           << "Check failed: " #condition " "
 #else
 // Optimized version - generates no code.
-#  define DCHECK(condition) if (false) LOG_IF_FALSE(FATAL, condition) \
+#  define DCHECK(condition) if (false) LOG_IF_FALSE(MINIGLOG_FATAL, condition) \
           << "Check failed: " #condition " "
 #endif  // NDEBUG
 
@@ -344,7 +344,7 @@ void LogMessageFatal(const char *file, int line, const T &message) {
 
 // Generic binary operator check macro. This should not be directly invoked,
 // instead use the binary comparison macros defined below.
-#define CHECK_OP(val1, val2, op) LOG_IF_FALSE(FATAL, ((val1) op (val2))) \
+#define CHECK_OP(val1, val2, op) LOG_IF_FALSE(MINIGLOG_FATAL, ((val1) op (val2))) \
   << "Check failed: " #val1 " " #op " " #val2 " "
 
 // Check_op macro definitions

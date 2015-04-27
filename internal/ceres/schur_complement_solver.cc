@@ -259,7 +259,7 @@ SparseSchurComplementSolver::SolveReducedLinearSystem(double* solution) {
     case CX_SPARSE:
       return SolveReducedLinearSystemUsingCXSparse(solution);
     default:
-      LOG(FATAL) << "Unknown sparse linear algebra library : "
+      LOG(MINIGLOG_FATAL) << "Unknown sparse linear algebra library : "
                  << options().sparse_linear_algebra_library_type;
   }
 
@@ -359,7 +359,9 @@ SparseSchurComplementSolver::SolveReducedLinearSystemUsingSuiteSparse(
 LinearSolver::Summary
 SparseSchurComplementSolver::SolveReducedLinearSystemUsingSuiteSparse(
     double* solution) {
-  LOG(FATAL) << "No SuiteSparse support in Ceres.";
+
+  LOG(MINIGLOG_FATAL) << "No SuiteSparse support in Ceres.";
+
   return LinearSolver::Summary();
 }
 #endif  // CERES_NO_SUITESPARSE
@@ -412,7 +414,9 @@ SparseSchurComplementSolver::SolveReducedLinearSystemUsingCXSparse(
 LinearSolver::Summary
 SparseSchurComplementSolver::SolveReducedLinearSystemUsingCXSparse(
     double* solution) {
-  LOG(FATAL) << "No CXSparse support in Ceres.";
+
+  LOG(MINIGLOG_FATAL) << "No CXSparse support in Ceres.";
+
   return LinearSolver::Summary();
 }
 #endif  // CERES_NO_CXPARSE

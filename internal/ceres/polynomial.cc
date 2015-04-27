@@ -183,7 +183,7 @@ bool FindPolynomialRoots(const Vector& polynomial_in,
                          Vector* real,
                          Vector* imaginary) {
   if (polynomial_in.size() == 0) {
-    LOG(ERROR) << "Invalid polynomial of size 0 passed to FindPolynomialRoots";
+    LOG(MINIGLOG_ERROR) << "Invalid polynomial of size 0 passed to FindPolynomialRoots";
     return false;
   }
 
@@ -197,7 +197,7 @@ bool FindPolynomialRoots(const Vector& polynomial_in,
 
   // Is the polynomial constant?
   if (degree == 0) {
-    LOG(WARNING) << "Trying to extract roots from a constant "
+    LOG(MINIGLOG_WARNING) << "Trying to extract roots from a constant "
                  << "polynomial in FindPolynomialRoots";
     // We return true with no roots, not false, as if the polynomial is constant
     // it is correct that there are no roots. It is not the case that they were
@@ -232,7 +232,7 @@ bool FindPolynomialRoots(const Vector& polynomial_in,
   // Find its (complex) eigenvalues.
   Eigen::EigenSolver<Matrix> solver(companion_matrix, false);
   if (solver.info() != Eigen::Success) {
-    LOG(ERROR) << "Failed to extract eigenvalues from companion matrix.";
+    LOG(MINIGLOG_ERROR) << "Failed to extract eigenvalues from companion matrix.";
     return false;
   }
 
@@ -240,7 +240,7 @@ bool FindPolynomialRoots(const Vector& polynomial_in,
   if (real != NULL) {
     *real = solver.eigenvalues().real();
   } else {
-    LOG(WARNING) << "NULL pointer passed as real argument to "
+    LOG(MINIGLOG_WARNING) << "NULL pointer passed as real argument to "
                  << "FindPolynomialRoots. Real parts of the roots will not "
                  << "be returned.";
   }
@@ -302,7 +302,7 @@ void MinimizePolynomial(const Vector& polynomial,
   const Vector derivative = DifferentiatePolynomial(polynomial);
   Vector roots_real;
   if (!FindPolynomialRoots(derivative, &roots_real, NULL)) {
-    LOG(WARNING) << "Unable to find the critical points of "
+    LOG(MINIGLOG_WARNING) << "Unable to find the critical points of "
                  << "the interpolating polynomial.";
     return;
   }

@@ -43,7 +43,7 @@ using std::string;
 void WriteStringToFileOrDie(const string &data, const string &filename) {
   FILE* file_descriptor = fopen(filename.c_str(), "wb");
   if (!file_descriptor) {
-    LOG(FATAL) << "Couldn't write to file: " << filename;
+    LOG(MINIGLOG_FATAL) << "Couldn't write to file: " << filename;
   }
   fwrite(data.c_str(), 1, data.size(), file_descriptor);
   fclose(file_descriptor);
@@ -53,7 +53,7 @@ void ReadFileToStringOrDie(const string &filename, string *data) {
   FILE* file_descriptor = fopen(filename.c_str(), "r");
 
   if (!file_descriptor) {
-    LOG(FATAL) << "Couldn't read file: " << filename;
+    LOG(MINIGLOG_FATAL) << "Couldn't read file: " << filename;
   }
 
   // Resize the input buffer appropriately.
@@ -68,7 +68,7 @@ void ReadFileToStringOrDie(const string &filename, string *data) {
                        num_bytes,
                        file_descriptor);
   if (num_read != num_bytes) {
-    LOG(FATAL) << "Couldn't read all of " << filename
+    LOG(MINIGLOG_FATAL) << "Couldn't read all of " << filename
                << "expected bytes: " << num_bytes * sizeof((*data)[0])
                << "actual bytes: " << num_read;
   }

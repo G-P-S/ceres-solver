@@ -292,7 +292,9 @@ bool LineSearchOptionsAreValid(const Solver::Options& options,
   // on max/min step size change during line search prevent bisection scaling
   // from occurring. Warn only, as this is likely a user mistake, but one which
   // does not prevent us from continuing.
-  LOG_IF(WARNING,
+
+  LOG_IF(MINIGLOG_WARNING,
+
          (options.line_search_interpolation_type == ceres::BISECTION &&
           (options.max_line_search_step_contraction > 0.5 ||
            options.min_line_search_step_contraction < 0.5)))
@@ -577,14 +579,18 @@ void SolverImpl::TrustRegionSolve(const Solver::Options& original_options,
 
 #ifndef CERES_USE_OPENMP
   if (options.num_threads > 1) {
-    LOG(WARNING)
+
+    LOG(MINIGLOG_WARNING)
+
         << "OpenMP support is not compiled into this binary; "
         << "only options.num_threads=1 is supported. Switching "
         << "to single threaded mode.";
     options.num_threads = 1;
   }
   if (options.num_linear_solver_threads > 1) {
-    LOG(WARNING)
+
+    LOG(MINIGLOG_WARNING)
+
         << "OpenMP support is not compiled into this binary; "
         << "only options.num_linear_solver_threads=1 is supported. Switching "
         << "to single threaded mode.";
@@ -600,17 +606,23 @@ void SolverImpl::TrustRegionSolve(const Solver::Options& original_options,
       options.trust_region_problem_dump_directory.empty()) {
     summary->message =
         "Solver::Options::trust_region_problem_dump_directory is empty.";
-    LOG(ERROR) << summary->message;
+
+    LOG(MINIGLOG_ERROR) << summary->message;
+
     return;
   }
 
   if (!ParameterBlocksAreFinite(problem_impl, &summary->message)) {
-    LOG(ERROR) << "Terminating: " << summary->message;
+
+    LOG(MINIGLOG_ERROR) << "Terminating: " << summary->message;
+
     return;
   }
 
   if (!ParameterBlocksAreFeasible(problem_impl, &summary->message)) {
-    LOG(ERROR) << "Terminating: " << summary->message;
+
+    LOG(MINIGLOG_ERROR) << "Terminating: " << summary->message;
+
     return;
   }
 
@@ -639,7 +651,9 @@ void SolverImpl::TrustRegionSolve(const Solver::Options& original_options,
 
   if (options.linear_solver_ordering.get() != NULL) {
     if (!IsOrderingValid(options, problem_impl, &summary->message)) {
-      LOG(ERROR) << summary->message;
+
+      LOG(MINIGLOG_ERROR) << summary->message;
+
       return;
     }
     event_logger.AddEvent("CheckOrdering");
@@ -734,7 +748,9 @@ void SolverImpl::TrustRegionSolve(const Solver::Options& original_options,
   scoped_ptr<CoordinateDescentMinimizer> inner_iteration_minimizer;
   if (options.use_inner_iterations) {
     if (reduced_program->parameter_blocks().size() < 2) {
-      LOG(WARNING) << "Reduced problem only contains one parameter block."
+
+      LOG(MINIGLOG_WARNING) << "Reduced problem only contains one parameter block."
+
                    << "Disabling inner iterations.";
     } else {
       inner_iteration_minimizer.reset(
@@ -743,7 +759,9 @@ void SolverImpl::TrustRegionSolve(const Solver::Options& original_options,
                                         problem_impl->parameter_map(),
                                         summary));
       if (inner_iteration_minimizer == NULL) {
-        LOG(ERROR) << summary->message;
+
+        LOG(MINIGLOG_ERROR) << summary->message;
+
         return;
       }
     }
@@ -813,13 +831,17 @@ void SolverImpl::LineSearchSolve(const Solver::Options& original_options,
       original_options.nonlinear_conjugate_gradient_type;
 
   if (!LineSearchOptionsAreValid(original_options, &summary->message)) {
-    LOG(ERROR) << summary->message;
+
+    LOG(MINIGLOG_ERROR) << summary->message;
+
     return;
   }
 
   if (IsBoundsConstrained(problem_impl->program())) {
     summary->message =  "LINE_SEARCH Minimizer does not support bounds.";
-    LOG(ERROR) << "Terminating: " << summary->message;
+
+    LOG(MINIGLOG_ERROR) << "Terminating: " << summary->message;
+
     return;
   }
 
@@ -834,7 +856,9 @@ void SolverImpl::LineSearchSolve(const Solver::Options& original_options,
 
 #ifndef CERES_USE_OPENMP
   if (options.num_threads > 1) {
-    LOG(WARNING)
+
+    LOG(MINIGLOG_WARNING)
+
         << "OpenMP support is not compiled into this binary; "
         << "only options.num_threads=1 is supported. Switching "
         << "to single threaded mode.";
@@ -846,13 +870,17 @@ void SolverImpl::LineSearchSolve(const Solver::Options& original_options,
   summary->num_threads_used = options.num_threads;
 
   if (!ParameterBlocksAreFinite(problem_impl, &summary->message)) {
-    LOG(ERROR) << "Terminating: " << summary->message;
+
+    LOG(MINIGLOG_ERROR) << "Terminating: " << summary->message;
+
     return;
   }
 
   if (options.linear_solver_ordering.get() != NULL) {
     if (!IsOrderingValid(options, problem_impl, &summary->message)) {
-      LOG(ERROR) << summary->message;
+
+      LOG(MINIGLOG_ERROR) << summary->message;
+
       return;
     }
   } else {
@@ -1152,7 +1180,9 @@ Program* SolverImpl::CreateReducedProgram(Solver::Options* options,
           << " residuals.";
 
   if (transformed_program->NumParameterBlocks() == 0) {
-    LOG(WARNING) << "No varying parameter blocks to optimize; "
+
+    LOG(MINIGLOG_WARNING) << "No varying parameter blocks to optimize; "
+
                  << "bailing early.";
     return transformed_program.release();
   }
@@ -1551,7 +1581,9 @@ void SolverImpl::AlternateLinearSolverForSchurTypeLinearSolver(
           "to CGNR with IDENTITY preconditioner.";
     }
   }
-  LOG(WARNING) << msg;
+
+  LOG(MINIGLOG_WARNING) << msg;
+
 }
 
 bool SolverImpl::ApplyUserOrdering(

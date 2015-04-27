@@ -107,10 +107,17 @@ TrustRegionStrategy::Summary LevenbergMarquardtStrategy::ComputeStep(
       linear_solver_->Solve(jacobian, residuals, solve_options, step);
 
   if (linear_solver_summary.termination_type == LINEAR_SOLVER_FATAL_ERROR) {
+<<<<<<< HEAD
     LOG(WARNING) << "Linear solver fatal error.";
   } else if (linear_solver_summary.termination_type == LINEAR_SOLVER_FAILURE ||
              !IsArrayValid(num_parameters, step)) {
     LOG(WARNING) << "Linear solver failure. Failed to compute a finite step.";
+=======
+    LOG(MINIGLOG_WARNING) << "Linear solver fatal error.";
+  } else if (linear_solver_summary.termination_type == LINEAR_SOLVER_FAILURE ||
+             !IsArrayValid(num_parameters, step)) {
+    LOG(MINIGLOG_WARNING) << "Linear solver failure. Failed to compute a finite step.";
+
     linear_solver_summary.termination_type = LINEAR_SOLVER_FAILURE;
   } else {
     VectorRef(step, num_parameters) *= -1.0;
@@ -127,7 +134,7 @@ TrustRegionStrategy::Summary LevenbergMarquardtStrategy::ComputeStep(
                                        residuals,
                                        step,
                                        0)) {
-      LOG(ERROR) << "Unable to dump trust region problem."
+      LOG(MINIGLOG_ERROR) << "Unable to dump trust region problem."
                  << " Filename base: " << per_solve_options.dump_filename_base;
     }
   }

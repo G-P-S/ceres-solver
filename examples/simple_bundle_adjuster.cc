@@ -100,7 +100,7 @@ class BALProblem {
   void FscanfOrDie(FILE *fptr, const char *format, T *value) {
     int num_scanned = fscanf(fptr, format, value);
     if (num_scanned != 1) {
-      LOG(FATAL) << "Invalid UW data file.";
+      LOG(MINIGLOG_FATAL) << "Invalid UW data file.";
     }
   }
 

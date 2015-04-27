@@ -100,7 +100,7 @@ VisibilityBasedPreconditioner::VisibilityBasedPreconditioner(
       ComputeClusterTridiagonalSparsity(bs);
       break;
     default:
-      LOG(FATAL) << "Unknown preconditioner type";
+      LOG(MINIGLOG_FATAL) << "Unknown preconditioner type";
   }
   const time_t structure_time = time(NULL);
   InitStorage(bs);
@@ -214,7 +214,7 @@ void VisibilityBasedPreconditioner::ClusterCameras(
                                                    *schur_complement_graph,
                                                    &membership);
   } else {
-    LOG(FATAL) << "Unknown visibility clustering algorithm.";
+    LOG(MINIGLOG_FATAL) << "Unknown visibility clustering algorithm.";
   }
 
   CHECK_GT(num_clusters_, 0);
