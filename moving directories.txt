@@ -1,0 +1,7 @@
+When moving this to a new directory....
+1. Change directories in all *.vcxproj files.
+2. Change directories in vstudio32/cmake_install.cmake
+3. Change directories in vstudio32/CMakeCache.txt
+if moving the vstudio32 folder relative to the source, you'll also have to edit the solution file.
+
+Emilio Graff 2015-04-24

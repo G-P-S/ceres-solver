@@ -107,12 +107,6 @@ TrustRegionStrategy::Summary LevenbergMarquardtStrategy::ComputeStep(
       linear_solver_->Solve(jacobian, residuals, solve_options, step);
 
   if (linear_solver_summary.termination_type == LINEAR_SOLVER_FATAL_ERROR) {
-<<<<<<< HEAD
-    LOG(WARNING) << "Linear solver fatal error.";
-  } else if (linear_solver_summary.termination_type == LINEAR_SOLVER_FAILURE ||
-             !IsArrayValid(num_parameters, step)) {
-    LOG(WARNING) << "Linear solver failure. Failed to compute a finite step.";
-=======
     LOG(MINIGLOG_WARNING) << "Linear solver fatal error.";
   } else if (linear_solver_summary.termination_type == LINEAR_SOLVER_FAILURE ||
              !IsArrayValid(num_parameters, step)) {
