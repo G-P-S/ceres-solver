@@ -142,7 +142,7 @@ SET(CERES_INCLUDE_DIRS ${CERES_INCLUDE_DIR})
 
 # Eigen.
 # Flag set during configuration and build of Ceres.
-SET(CERES_EIGEN_VERSION ..)
+SET(CERES_EIGEN_VERSION 3.2.2)
 # Append the locations of Eigen when Ceres was built to the search path hints.
 LIST(APPEND EIGEN_INCLUDE_DIR_HINTS ../../eigen-3.2.2)
 # Search quietly s/t we control the timing of the error message if not found.

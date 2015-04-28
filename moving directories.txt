@@ -5,3 +5,6 @@ When moving this to a new directory....
 if moving the vstudio32 folder relative to the source, you'll also have to edit the solution file.
 
 Emilio Graff 2015-04-24
+
+***
+Note - for Ceres in particular, it doesn't appear like this is enough. Use the included binaries (unless you're smarter than me and can fix this mess).

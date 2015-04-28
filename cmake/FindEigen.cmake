@@ -112,7 +112,7 @@ SET(EIGEN_FOUND TRUE)
 
 # Extract Eigen version from Eigen/src/Core/util/Macros.h
 IF (EIGEN_INCLUDE_DIR)
-  SET(EIGEN_VERSION_FILE ${EIGEN_INCLUDE_DIR}/Eigen/src/Core/util/Macros.h)
+  SET(EIGEN_VERSION_FILE ${CMAKE_BINARY_DIR}/${EIGEN_INCLUDE_DIR}/Eigen/src/Core/util/Macros.h)
   IF (NOT EXISTS ${EIGEN_VERSION_FILE})
     EIGEN_REPORT_NOT_FOUND(
       "Could not find file: ${EIGEN_VERSION_FILE} "

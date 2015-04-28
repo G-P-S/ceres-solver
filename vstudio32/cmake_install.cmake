@@ -1,4 +1,4 @@
-# Install script for directory: ..
+# Install script for directory: C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,64 +29,64 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ceres" TYPE FILE FILES
-    "../include/ceres/autodiff_cost_function.h"
-    "../include/ceres/autodiff_local_parameterization.h"
-    "../include/ceres/ceres.h"
-    "../include/ceres/conditioned_cost_function.h"
-    "../include/ceres/cost_function.h"
-    "../include/ceres/cost_function_to_functor.h"
-    "../include/ceres/covariance.h"
-    "../include/ceres/crs_matrix.h"
-    "../include/ceres/c_api.h"
-    "../include/ceres/dynamic_autodiff_cost_function.h"
-    "../include/ceres/dynamic_numeric_diff_cost_function.h"
-    "../include/ceres/fpclassify.h"
-    "../include/ceres/gradient_checker.h"
-    "../include/ceres/iteration_callback.h"
-    "../include/ceres/jet.h"
-    "../include/ceres/local_parameterization.h"
-    "../include/ceres/loss_function.h"
-    "../include/ceres/normal_prior.h"
-    "../include/ceres/numeric_diff_cost_function.h"
-    "../include/ceres/numeric_diff_functor.h"
-    "../include/ceres/ordered_groups.h"
-    "../include/ceres/problem.h"
-    "../include/ceres/rotation.h"
-    "../include/ceres/sized_cost_function.h"
-    "../include/ceres/solver.h"
-    "../include/ceres/types.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/autodiff_cost_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/autodiff_local_parameterization.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/ceres.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/conditioned_cost_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/cost_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/cost_function_to_functor.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/covariance.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/crs_matrix.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/c_api.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/dynamic_autodiff_cost_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/dynamic_numeric_diff_cost_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/fpclassify.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/gradient_checker.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/iteration_callback.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/jet.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/local_parameterization.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/loss_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/normal_prior.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/numeric_diff_cost_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/numeric_diff_functor.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/ordered_groups.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/problem.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/rotation.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/sized_cost_function.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/solver.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/types.h"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ceres/internal" TYPE FILE FILES
-    "../include/ceres/internal/autodiff.h"
-    "../include/ceres/internal/disable_warnings.h"
-    "../include/ceres/internal/eigen.h"
-    "../include/ceres/internal/fixed_array.h"
-    "../include/ceres/internal/macros.h"
-    "../include/ceres/internal/manual_constructor.h"
-    "../include/ceres/internal/numeric_diff.h"
-    "../include/ceres/internal/port.h"
-    "../include/ceres/internal/reenable_warnings.h"
-    "../include/ceres/internal/scoped_ptr.h"
-    "../include/ceres/internal/variadic_evaluate.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/autodiff.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/disable_warnings.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/eigen.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/fixed_array.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/macros.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/manual_constructor.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/numeric_diff.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/port.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/reenable_warnings.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/scoped_ptr.h"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/include/ceres/internal/variadic_evaluate.h"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ceres/internal" TYPE FILE FILES "./config/ceres/internal/config.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ceres/internal" TYPE FILE FILES "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/config/ceres/internal/config.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ceres/internal/miniglog/glog" TYPE FILE FILES "../internal/ceres/miniglog/glog/logging.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/ceres/internal/miniglog/glog" TYPE FILE FILES "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/internal/ceres/miniglog/glog/logging.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/CMake/CeresTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/CMake/CeresTargets.cmake"
-         "./CMakeFiles/Export/CMake/CeresTargets.cmake")
+         "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/Export/CMake/CeresTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/CMake/CeresTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -95,34 +95,34 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "./CMakeFiles/Export/CMake/CeresTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/Export/CMake/CeresTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "./CMakeFiles/Export/CMake/CeresTargets-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/Export/CMake/CeresTargets-debug.cmake")
   endif()
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "./CMakeFiles/Export/CMake/CeresTargets-minsizerel.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/Export/CMake/CeresTargets-minsizerel.cmake")
   endif()
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "./CMakeFiles/Export/CMake/CeresTargets-relwithdebinfo.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/Export/CMake/CeresTargets-relwithdebinfo.cmake")
   endif()
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "./CMakeFiles/Export/CMake/CeresTargets-release.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/Export/CMake/CeresTargets-release.cmake")
   endif()
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/CMake" TYPE FILE FILES
-    "./CeresConfig.cmake"
-    "./CeresConfigVersion.cmake"
-    "../cmake/FindEigen.cmake"
-    "../cmake/FindGlog.cmake"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CeresConfig.cmake"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CeresConfigVersion.cmake"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/cmake/FindEigen.cmake"
+    "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/cmake/FindGlog.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("./internal/ceres/cmake_install.cmake")
-  include("./examples/cmake_install.cmake")
+  include("C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/internal/ceres/cmake_install.cmake")
+  include("C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/cmake_install.cmake")
 
 endif()
 
@@ -132,7 +132,7 @@ else()
   set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 endif()
 
-file(WRITE "./${CMAKE_INSTALL_MANIFEST}" "")
+file(WRITE "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/${CMAKE_INSTALL_MANIFEST}" "")
 foreach(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  file(APPEND "./${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  file(APPEND "C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 endforeach()

@@ -441,7 +441,7 @@ CXSPARSE_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EIGEN_INCLUDE_DIR
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //Details about finding Eigen
-FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[../../eigen-3.2.2][v..()]
+FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[../../eigen-3.2.2][v3.2.2()]
 //Details about finding Gflags
 FIND_PACKAGE_MESSAGE_DETAILS_Gflags:INTERNAL=[../../gflags-2.1.1/vstudio32/include][../../gflags-2.1.1/vstudio32/lib/Release/gflags.lib][v()]
 //Details about finding Threads

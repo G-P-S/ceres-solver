@@ -84,7 +84,7 @@
     </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Debug/</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CompileAs>CompileAsCpp</CompileAs>
@@ -103,10 +103,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_VARIADIC_MAX=10;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -129,7 +129,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>Release/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DisableSpecificWarnings>4018;4099;4996;4800;4996;4244;4251</DisableSpecificWarnings>
@@ -147,10 +147,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_VARIADIC_MAX=10;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -173,7 +173,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DisableSpecificWarnings>4018;4099;4996;4800;4996;4244;4251</DisableSpecificWarnings>
@@ -191,10 +191,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_VARIADIC_MAX=10;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -217,7 +217,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -235,10 +235,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_VARIADIC_MAX=10;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\include;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\internal\ceres\miniglog;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\..\..\eigen-3.2.2;C:\Users\egraff\Documents\Emilio\Libraries\ceres-solver\vstudio32\config;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

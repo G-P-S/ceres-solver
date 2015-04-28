@@ -38,6 +38,9 @@ ENDIF (COMMAND cmake_policy)
 
 PROJECT(CERES C CXX)
 
+MESSAGE("CMAKE_SOURCE_DIR=${CMAKE_SOURCE_DIR}")
+MESSAGE("CMAKE_BINARY_DIR=${CMAKE_BINARY_DIR}")
+
 # Set up the git hook to make Gerrit Change-Id: lines in commit messages.
 SET (LOCAL_GIT_DIRECTORY)
 IF (EXISTS ${CMAKE_SOURCE_DIR}/.git)

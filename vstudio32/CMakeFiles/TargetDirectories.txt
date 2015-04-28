@@ -1,0 +1,13 @@
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/ALL_BUILD.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/ZERO_CHECK.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/internal/ceres/CMakeFiles/ceres.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/curve_fitting.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/curve_fitting_c.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/ellipse_approximation.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/helloworld.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/helloworld_analytic_diff.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/helloworld_numeric_diff.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/internal/ceres/CMakeFiles/miniglog.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/robust_curve_fitting.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/examples/CMakeFiles/simple_bundle_adjuster.dir
+C:/Users/egraff/Documents/Emilio/Libraries/ceres-solver/vstudio32/CMakeFiles/uninstall.dir
