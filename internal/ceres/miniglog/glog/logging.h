@@ -104,6 +104,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <iomanip>
 
 // Log severity level constants.
 const int MINIGLOG_FATAL = -3;
@@ -170,7 +171,10 @@ class MessageLogger {
     : file_(file), line_(line), tag_(tag), severity_(severity) {
     // Pre-pend the stream with the file and line number.
     StripBasename(std::string(file), &filename_only_);
-    stream_ << filename_only_ << ":" << line << " ";
+	stream_ << std::left << std::setw(30) << std::setfill(' ');
+    stream_ << filename_only_ << "line ";
+	stream_ << std::left << std::setw(5) << std::setfill(' ');
+	stream_ << line << " ";
   }
 
   // Output the contents of the stream to the proper channel on destruction.
@@ -248,8 +252,12 @@ class MessageLogger {
   }
 
   void StripBasename(const std::string &full_path, std::string *filename) {
-    // TODO(settinger): Add support for OSs with different path separators.
+	//Doesn't seem to work.
+#ifdef _WINDOWS
+    const char kSeparator = '\\';
+#else
     const char kSeparator = '/';
+#endif
     size_t pos = full_path.rfind(kSeparator);
     if (pos != std::string::npos) {
       *filename = full_path.substr(pos + 1, std::string::npos);
